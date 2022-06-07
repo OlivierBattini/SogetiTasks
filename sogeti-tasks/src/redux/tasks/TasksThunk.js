@@ -1,9 +1,9 @@
 import TasksService from '../../services/TasksService';
-import { fetchTasksSuccess, fetchTasksFailure } from './TasksSlice';
+import { fetchTasksSuccess, fetchTasksFailure, upsertTaskSuccess, upsertTaskFailure } from './TasksSlice';
 
 const fetchTasks = () => async dispatch => {
     TasksService
-        .get()
+        .getAll()
         .then((tasks) => {
             dispatch(fetchTasksSuccess(tasks));
         })
@@ -12,4 +12,21 @@ const fetchTasks = () => async dispatch => {
         });
 };
 
-export { fetchTasks };
+const switchTask = (task) => async dispatch => {
+    let updatedTask = { ...task };
+    updatedTask.state = !updatedTask.state;
+    dispatch(upsertTask(updatedTask));
+};
+
+const upsertTask = (task) => async dispatch => {
+    TasksService
+        .upsert(task)
+        .then((tasks) => {
+            dispatch(upsertTaskSuccess(task));
+        })
+        .catch((error) => {
+            dispatch(upsertTaskFailure(error));
+        });
+};
+
+export { fetchTasks, switchTask, upsertTask };

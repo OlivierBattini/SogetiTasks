@@ -1,9 +1,11 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
+const TASKS_API_PATH = '/tasks';
+
 const _mockAdapter = new MockAdapter(axios);
 _mockAdapter
-    .onGet('/tasks')
+    .onGet(TASKS_API_PATH)
     .reply(200, {
         tasks: [
             { id: 1, state: false, title: 'Create the best todo app' },
@@ -11,14 +13,27 @@ _mockAdapter
             { id: 3, state: false, title: 'Get hired :)' }
         ]
     });
+_mockAdapter
+    .onPut(TASKS_API_PATH)
+    .reply(200, (config) => {
+        return { success: true };
+    });
 
 const TasksService = {
 
-    get: async () => {
+    getAll: async () => {
         return axios
-            .get('/tasks')
+            .get(TASKS_API_PATH)
             .then((response) => {
                 return response.data.tasks;
+            });
+    },
+
+    upsert: async (task) => {
+        return axios
+            .put(TASKS_API_PATH, { task })
+            .then((response) => {
+                return response.data;
             });
     }
 
