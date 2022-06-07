@@ -1,0 +1,39 @@
+/* Quick link to Bootstrap */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css");
+
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+body {
+    font-family: Ubuntu;
+}
+
+h1, h2, h3 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    font-weight: 600;
+    text-align: center;
+    color: #0070ad;
+}
+
+.container {
+    padding-top: 2rem;
+    max-width: 600px;
+}
+
+.taskcard {
+    margin: 1rem 0;
+    padding: 1rem;
+
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.taskcard--title {
+    font-size: 1.2rem;
+}
+
+.taskcard--state {
+    margin-right: 1rem;
+}
