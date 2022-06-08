@@ -1,0 +1,16 @@
+.taskcard {
+    display: flex;
+    justify-content: space-between;
+}
+
+.taskcard .taskcard--editlink {
+    visibility: hidden;
+}
+
+.taskcard:hover .taskcard--editlink {
+    visibility: visible;
+}
+
+.taskcard--editlink {
+    font-size: 1.2rem;
+}
