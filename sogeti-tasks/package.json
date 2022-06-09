@@ -2,7 +2,7 @@
   "name": "sogeti-tasks",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://olivierbattini.github.io",
+  "homepage": "https://olivierbattini.github.io/SogetiTasks/",
   "eslintConfig": {
     "extends": [
       "react-app",
