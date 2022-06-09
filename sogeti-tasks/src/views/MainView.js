@@ -1,9 +1,13 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchTasks, switchTask } from '../redux/tasks/TasksThunk';
+import { Link } from 'react-router-dom';
+
+import Config from '../config/Config';
 
 import TaskCard from '../components/tasks/TaskCard';
-import Config from '../config/Config';
+import FormGroup from '../components/controls/FormGroup';
+import SecondaryButton from '../components/controls/SecondaryButton';
 
 export default function MainView() {
 
@@ -25,6 +29,13 @@ export default function MainView() {
     return (
         <>
             <h2>Task list</h2>
+            
+            <FormGroup>
+                <Link to={ Config.Routes.Task.replace(':id', 'new') }>
+                    <SecondaryButton>New Task</SecondaryButton>
+                </Link>
+            </FormGroup>
+
             <div className="tasklist">
                 {
                     tasks.map(task => {

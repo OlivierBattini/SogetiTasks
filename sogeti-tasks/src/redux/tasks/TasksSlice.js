@@ -11,7 +11,6 @@ const TasksSlice = createSlice({
 
         // Fetch
         fetchTasksSuccess: (state, action) => {
-            console.info('fetchTasksSuccess');
             state.tasks = action.payload;
         },
         fetchTasksFailure: (state, action) => {
@@ -20,7 +19,6 @@ const TasksSlice = createSlice({
 
         // Upsert & switch (switch dispatches an upsert)
         upsertTaskSuccess: (state, action) => {
-            console.info('upsertTaskSuccess');
             state.tasks = arrayUpsert(state.tasks, action.payload);
         },
         upsertTaskFailure: (state, action) => {

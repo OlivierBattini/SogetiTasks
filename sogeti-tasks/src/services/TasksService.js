@@ -20,7 +20,8 @@ _mockAdapter
     .onPut(TASKS_API_PATH)
     .reply((config) => {
         let task = JSON.parse(config.data).task;
-        state.tasks = arrayUpsert([ ...state.tasks ], task);
+        let newState = arrayUpsert([ ...state.tasks ], task);
+        state.tasks = newState;
         return [ 200, { success: true } ];
     });
 

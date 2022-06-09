@@ -1,0 +1,5 @@
+{
+    "TITLE_IS_REQUIRED" : true,
+    "TITLE_MIN_LENGTH" : 3,
+    "TITLE_ERROR" : "Task title is required."
+}

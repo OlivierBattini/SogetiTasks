@@ -1,3 +1,8 @@
 .form-group {
     margin: 1rem 0;
 }
+
+.button-bar {
+    display: flex;
+    justify-content: space-between;
+}

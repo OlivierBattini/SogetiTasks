@@ -1,11 +1,23 @@
+import { forwardRef } from 'react';
+
 import Label from './Label';
 import './Controls.css';
 
-export default function InputText({ id, defaultValue, label, disabled }) {
+const InputText = forwardRef(({ id, defaultValue, label, disabled }, ref) => {
     return (
         <>
             { label && <Label id={ id } label={ label } /> }
-            <input id={ id } name={ id } className="form-control" type="text" defaultValue={ defaultValue } disabled={ disabled ? 'disabled' : '' } />
+            <input
+                id={ id }
+                ref={ ref }
+                name={ id }
+                defaultValue={ defaultValue }
+                className="form-control"
+                type="text"
+                disabled={ disabled ? 'disabled' : '' }
+            />
         </>
     );
-}
+});
+
+export default InputText;

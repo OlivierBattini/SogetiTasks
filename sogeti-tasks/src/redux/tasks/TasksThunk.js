@@ -18,11 +18,12 @@ const switchTask = (task) => async dispatch => {
     dispatch(upsertTask(updatedTask));
 };
 
-const upsertTask = (task) => async dispatch => {
+const upsertTask = (task, next) => async dispatch => {
     TasksService
         .upsert(task)
         .then((tasks) => {
             dispatch(upsertTaskSuccess(task));
+            if (next) { next(); }
         })
         .catch((error) => {
             dispatch(upsertTaskFailure(error));

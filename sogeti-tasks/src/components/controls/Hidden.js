@@ -1,9 +1,18 @@
+import { forwardRef } from 'react';
 import './Controls.css';
 
-export default function Hidden({ id, defaultValue }) {
+const Hidden = forwardRef(({ id, defaultValue }, ref) => {
     return (
         <>
-            <input id={ id } name={ id } type="hidden" defaultValue={ defaultValue } />
+            <input
+                id={ id }
+                ref={ ref }
+                name={ id }
+                type="hidden"
+                defaultValue={ defaultValue }
+            />
         </>
     );
-}
+});
+
+export default Hidden;
