@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.3956a8ae.css",
-    "main.js": "/static/js/main.2ee858e4.js",
-    "index.html": "/index.html",
-    "main.3956a8ae.css.map": "/static/css/main.3956a8ae.css.map",
-    "main.2ee858e4.js.map": "/static/js/main.2ee858e4.js.map"
+    "main.css": "/SogetiTasks/static/css/main.3956a8ae.css",
+    "main.js": "/SogetiTasks/static/js/main.2ee858e4.js",
+    "index.html": "/SogetiTasks/index.html",
+    "main.3956a8ae.css.map": "/SogetiTasks/static/css/main.3956a8ae.css.map",
+    "main.2ee858e4.js.map": "/SogetiTasks/static/js/main.2ee858e4.js.map"
   },
   "entrypoints": [
     "static/css/main.3956a8ae.css",
