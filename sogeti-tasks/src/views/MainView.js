@@ -24,6 +24,7 @@ export default function MainView() {
 
     return (
         <>
+            <h2>Task list</h2>
             <div className="tasklist">
                 {
                     tasks.map(task => {

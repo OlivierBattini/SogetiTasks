@@ -14,7 +14,9 @@ let state = {
 const _mockAdapter = new MockAdapter(axios);
 _mockAdapter
     .onGet(TASKS_API_PATH)
-    .reply(200, { tasks: state.tasks })
+    .reply((config) => {
+        return [ 200, { tasks: state.tasks } ];
+    })
     .onPut(TASKS_API_PATH)
     .reply((config) => {
         let task = JSON.parse(config.data).task;
